@@ -1,0 +1,12 @@
+<h3>Find Customer By Name</h3>
+<input type="text" [(ngModel)]="name" placeholder="Enter name to search.." class="input">
+
+<button class="btn btn-success" (click)="search()">Search</button>
+
+<hr />
+
+<ul>
+  <li *ngFor="let customer of customers | async">
+    <h5>{{customer.name}} - Age : {{customer.age}} - Active : {{customer.active}}</h5>
+  </li>
+</ul>

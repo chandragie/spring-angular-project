@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'reactive-mongo';
+  title = 'Reactive Spring Angular Mongo';
+  description = 'Spring Boot - WebFlux - Angular - MongoDB - RxJS';
 }

@@ -26,8 +26,8 @@ import reactor.core.publisher.Mono;
 /**
  * CustomerController
  */
-@RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@RestController
 @RequestMapping("reactive-api")
 public class CustomerController {
 
@@ -38,6 +38,7 @@ public class CustomerController {
     public Flux<Customer> getAllCustomer() {
         System.out.println("Get all customers...");
         return repo.findAll().delayElements(Duration.ofMillis(1000));
+        // return repo.findAll();
     }
 
     @PostMapping("/customers/create")
@@ -89,6 +90,7 @@ public class CustomerController {
     @GetMapping("/customers/findbyname")
     public Flux<Customer> findByName(@RequestParam String name) {
         return repo.findByName(name).delayElements(Duration.ofMillis(1000));
+        // return repo.findByName(name);
     }
 
 }
